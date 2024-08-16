@@ -368,3 +368,6 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.lnk
+
+# Game Jam Project Ignores
+*editor_layout.cfg
