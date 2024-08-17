@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="GMTKGameJam2024"
-config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://Sprites/icon.svg"
+config/features=PackedStringArray("4.3", "C#", "Forward Plus")
+config/icon="res://Assets/icon.svg"
 
 [dotnet]
 

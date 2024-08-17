@@ -1,3 +1,35 @@
-[gd_scene format=3 uid="uid://d4k4pxiqtjiak"]
+[gd_scene load_steps=6 format=3 uid="uid://d4k4pxiqtjiak"]
+
+[ext_resource type="Script" path="res://Scripts/ACT1/PlayerShip.cs" id="1_3mc7q"]
+[ext_resource type="Texture2D" uid="uid://dlkqq45b00kmw" path="res://Assets/icon.svg" id="2_5h2tr"]
+[ext_resource type="Script" path="res://Scripts/CameraController.cs" id="3_jndf3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bc1ms"]
+size = Vector2(126, 125)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w3xox"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5h2tr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="PlayerShip" type="CharacterBody2D" parent="."]
+script = ExtResource("1_3mc7q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerShip"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_bc1ms")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerShip"]
+sprite_frames = SubResource("SpriteFrames_w3xox")
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("3_jndf3")
+target = NodePath("../PlayerShip")
