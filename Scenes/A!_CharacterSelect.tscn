@@ -1,20 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgw7d1f7scotc"]
+[gd_scene load_steps=6 format=3 uid="uid://dgw7d1f7scotc"]
 
-[ext_resource type="Texture2D" uid="uid://dlkqq45b00kmw" path="res://Assets/icon.svg" id="1_hmutg"]
+[ext_resource type="Texture2D" uid="uid://calo81l4atxfi" path="res://Assets/portrait3.png" id="1_usqx7"]
+[ext_resource type="Texture2D" uid="uid://ciat082x24buf" path="res://Assets/portrait2.png" id="2_pbc7g"]
 [ext_resource type="Script" path="res://Scripts/ACT1/CharacterSelectPortrait.cs" id="2_v1n6i"]
+[ext_resource type="Texture2D" uid="uid://cbmulgt7ybtu8" path="res://Assets/portrait1.png" id="3_3mr1x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsa10"]
-size = Vector2(320, 450)
+size = Vector2(342, 440)
 
 [node name="A!CharacterSelect" type="Node2D"]
 
 [node name="Character C" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 770.0
-offset_top = 150.0
-offset_right = 1090.0
-offset_bottom = 600.0
+offset_left = 1425.0
+offset_top = 521.0
+offset_right = 1745.0
+offset_bottom = 971.0
 
 [node name="Character Name" type="Label" parent="Character C"]
 layout_mode = 0
@@ -22,25 +24,27 @@ offset_left = 64.0
 offset_top = 360.0
 offset_right = 256.0
 offset_bottom = 383.0
+theme_override_font_sizes/font_size = 28
 text = "Character C
 "
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Character C"]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 100.0
-offset_right = 228.0
-offset_bottom = 228.0
-texture = ExtResource("1_hmutg")
+offset_left = -9.0
+offset_top = -90.0
+offset_right = 318.0
+offset_bottom = 332.0
+texture = ExtResource("1_usqx7")
+expand_mode = 1
 
 [node name="Character B" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 385.0
-offset_top = 150.0
-offset_right = 705.0
-offset_bottom = 600.0
+offset_left = 803.0
+offset_top = 517.0
+offset_right = 1123.0
+offset_bottom = 967.0
 
 [node name="Character Name" type="Label" parent="Character B"]
 layout_mode = 0
@@ -48,19 +52,22 @@ offset_left = 64.0
 offset_top = 360.0
 offset_right = 256.0
 offset_bottom = 383.0
+theme_override_font_sizes/font_size = 28
 text = "Character B
 "
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Character B"]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 100.0
-offset_right = 228.0
-offset_bottom = 228.0
-texture = ExtResource("1_hmutg")
+offset_left = -7.0
+offset_top = -90.0
+offset_right = 329.0
+offset_bottom = 335.0
+texture = ExtResource("2_pbc7g")
+expand_mode = 1
 
 [node name="Character A" type="Area2D" parent="."]
+position = Vector2(-91, 203)
 script = ExtResource("2_v1n6i")
 
 [node name="UI" type="Control" parent="Character A"]
@@ -73,21 +80,61 @@ mouse_filter = 2
 
 [node name="Character Name" type="Label" parent="Character A/UI"]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 360.0
-offset_right = 256.0
-offset_bottom = 383.0
+offset_left = 357.0
+offset_top = 524.0
+offset_right = 549.0
+offset_bottom = 547.0
+theme_override_font_sizes/font_size = 28
 text = "Character A"
 horizontal_alignment = 1
 
 [node name="Character Portrait" type="TextureRect" parent="Character A/UI"]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 100.0
-offset_right = 228.0
-offset_bottom = 228.0
-texture = ExtResource("1_hmutg")
+offset_left = 287.0
+offset_top = 68.0
+offset_right = 625.0
+offset_bottom = 500.0
+texture = ExtResource("3_3mr1x")
+expand_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character A"]
-position = Vector2(160, 375)
+position = Vector2(456, 435)
 shape = SubResource("RectangleShape2D_vsa10")
+
+[node name="Not Implemented1" type="ColorRect" parent="."]
+offset_left = 804.0
+offset_top = 709.0
+offset_right = 1166.0
+offset_bottom = 740.0
+rotation = -0.541052
+color = Color(0.443137, 0.443137, 0.443137, 0.596078)
+
+[node name="Text" type="RichTextLabel" parent="Not Implemented1"]
+offset_left = 92.9494
+offset_top = 4.51779
+offset_right = 255.949
+offset_bottom = 29.5178
+text = "NOT IMPLEMENTED"
+
+[node name="Not Implemented2" type="ColorRect" parent="."]
+offset_left = 1414.0
+offset_top = 708.0
+offset_right = 1776.0
+offset_bottom = 739.0
+rotation = -0.541052
+color = Color(0.443137, 0.443137, 0.443137, 0.596078)
+
+[node name="Text" type="RichTextLabel" parent="Not Implemented2"]
+offset_left = 92.9494
+offset_top = 4.51779
+offset_right = 255.949
+offset_bottom = 29.5178
+text = "NOT IMPLEMENTED"
+
+[node name="Title" type="RichTextLabel" parent="."]
+offset_left = 619.0
+offset_top = 129.0
+offset_right = 1290.0
+offset_bottom = 241.0
+theme_override_font_sizes/normal_font_size = 72
+text = "Select your captain"

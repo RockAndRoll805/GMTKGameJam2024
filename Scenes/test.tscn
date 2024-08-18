@@ -1,7 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://d4k4pxiqtjiak"]
 
 [ext_resource type="Script" path="res://Scripts/ACT1/PlayerShip.cs" id="1_3mc7q"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://c1lo31c2gtqoq" path="res://Assets/icon.svg" id="2_5h2tr"]
+=======
+[ext_resource type="Texture2D" uid="uid://sa05136wkh1b" path="res://Assets/icon.svg" id="2_5h2tr"]
+>>>>>>> second-portrait
 [ext_resource type="Script" path="res://Scripts/CameraController.cs" id="3_jndf3"]
 [ext_resource type="PackedScene" uid="uid://b0bsjiyya6vgq" path="res://Assets/UI_NineSlice_01.res" id="4_801iv"]
 
