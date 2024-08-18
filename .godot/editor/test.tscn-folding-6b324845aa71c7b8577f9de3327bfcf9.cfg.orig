@@ -1,9 +1,0 @@
-[folding]
-
-<<<<<<< HEAD
-node_unfolds=[NodePath("PlayerShip"), PackedStringArray("Collision"), NodePath("PlayerShip/CollisionShape2D"), PackedStringArray("Transform"), NodePath("PlayerShip/AnimatedSprite2D"), PackedStringArray("Animation")]
-=======
-node_unfolds=[NodePath("PlayerShip"), PackedStringArray("Collision"), NodePath("PlayerShip/CollisionShape2D"), PackedStringArray("Transform"), NodePath("PlayerShip/AnimatedSprite2D"), PackedStringArray("Animation"), NodePath("UiNineSlice01"), PackedStringArray("Layout", "Layout/Transform")]
->>>>>>> main
-resource_unfolds=["res://Scenes/test.tscn::RectangleShape2D_bc1ms", PackedStringArray("Resource"), "res://Scenes/test.tscn::SpriteFrames_w3xox", PackedStringArray("Resource")]
-nodes_folded=[]

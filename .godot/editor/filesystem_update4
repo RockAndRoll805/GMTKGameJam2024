@@ -1,1 +1,6 @@
-Scenes/test.tscn
+res://Scripts/ACT1/CharacterSelectPortrait.cs
+res://Scripts/CameraController.cs
+res://Scripts/ACT1/PlayerShip.cs
+res://Scenes/A!_CharacterSelect.tscn
+res://Scenes/test.tscn
+res://Scenes/Act1.tscn
