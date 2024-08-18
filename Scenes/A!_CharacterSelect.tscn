@@ -12,11 +12,12 @@ size = Vector2(320, 450)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 770.0
-offset_top = 126.0
+offset_top = 150.0
 offset_right = 1090.0
-offset_bottom = 576.0
+offset_bottom = 600.0
 
 [node name="Character Name" type="Label" parent="Character C"]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 360.0
 offset_right = 256.0
@@ -37,11 +38,12 @@ texture = ExtResource("1_hmutg")
 layout_mode = 3
 anchors_preset = 0
 offset_left = 385.0
-offset_top = 126.0
+offset_top = 150.0
 offset_right = 705.0
-offset_bottom = 576.0
+offset_bottom = 600.0
 
 [node name="Character Name" type="Label" parent="Character B"]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 360.0
 offset_right = 256.0
@@ -64,11 +66,13 @@ script = ExtResource("2_v1n6i")
 [node name="UI" type="Control" parent="Character A"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 126.0
+offset_top = 150.0
 offset_right = 320.0
-offset_bottom = 576.0
+offset_bottom = 600.0
+mouse_filter = 2
 
 [node name="Character Name" type="Label" parent="Character A/UI"]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 360.0
 offset_right = 256.0
@@ -77,6 +81,7 @@ text = "Character A"
 horizontal_alignment = 1
 
 [node name="Character Portrait" type="TextureRect" parent="Character A/UI"]
+layout_mode = 0
 offset_left = 100.0
 offset_top = 100.0
 offset_right = 228.0
@@ -84,5 +89,5 @@ offset_bottom = 228.0
 texture = ExtResource("1_hmutg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character A"]
-position = Vector2(160, 351)
+position = Vector2(160, 375)
 shape = SubResource("RectangleShape2D_vsa10")
