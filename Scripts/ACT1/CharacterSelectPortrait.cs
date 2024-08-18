@@ -4,7 +4,7 @@ using System;
 public partial class CharacterSelectPortrait : Area2D
 {
 
-	[Export] private string next_scene = "Act1"; // the next scene to be loaded
+	[Export] private string next_scene = ""; // the next scene to be loaded
 
 	// Visual Vars
 	[Export] private int alpha_speed = 4; // the speed at which the alpha value modulates
@@ -12,7 +12,6 @@ public partial class CharacterSelectPortrait : Area2D
 
 	// Booleans
 	private bool is_mouse_inside = false;
-	private bool is_mouse_pressed = false;
 	
 	// Nodes
 	private Label character_name;
@@ -45,13 +44,11 @@ public partial class CharacterSelectPortrait : Area2D
 			curr_alpha += alpha_speed*(float)delta;
 			character_name.Modulate = new Godot.Color(character_name.Modulate.R, character_name.Modulate.G, character_name.Modulate.B, (1+(float)Math.Sin(curr_alpha))/2);
 
-			if(Input.IsMouseButtonPressed(MouseButton.Left) && !is_mouse_pressed) {
-				is_mouse_pressed = true;
+			if(Input.IsMouseButtonPressed(MouseButton.Left)) {
 				GD.Print("character selected");
 				
-
 				// Load next scene
-				GetTree().ChangeSceneToFile(next_scene); // UNCOMMENT THIS ONCE THE NEXT SCENE IS CREATED
+				// GetTree().ChangeSceneToFile(next_scene); // UNCOMMENT THIS ONCE THE NEXT SCENE IS CREATED
 			}
 		}
 		else {
