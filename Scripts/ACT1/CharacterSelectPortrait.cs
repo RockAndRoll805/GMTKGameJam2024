@@ -4,7 +4,7 @@ using System;
 public partial class CharacterSelectPortrait : Area2D
 {
 
-	[Export] private string next_scene = "Act1"; // the next scene to be loaded
+	[Export] private string next_scene = "res://Scenes/Act1.tscn"; // the next scene to be loaded
 
 	// Visual Vars
 	[Export] private int alpha_speed = 4; // the speed at which the alpha value modulates
@@ -47,10 +47,11 @@ public partial class CharacterSelectPortrait : Area2D
 
 			if(Input.IsMouseButtonPressed(MouseButton.Left) && !is_mouse_pressed) {
 				is_mouse_pressed = true;
-				GD.Print("character selected");
+				// GD.Print("character selected"); // DEBUG
 				
 
 				// Load next scene
+				GD.Print(GetTree().CurrentScene);
 				GetTree().ChangeSceneToFile(next_scene); // UNCOMMENT THIS ONCE THE NEXT SCENE IS CREATED
 			}
 		}
