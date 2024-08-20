@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgw7d1f7scotc"]
+[gd_scene load_steps=6 format=3 uid="uid://j6884v7l1ho3"]
 
-[ext_resource type="Texture2D" uid="uid://calo81l4atxfi" path="res://Assets/portrait3.png" id="1_usqx7"]
-[ext_resource type="Texture2D" uid="uid://ciat082x24buf" path="res://Assets/portrait2.png" id="2_pbc7g"]
+[ext_resource type="Texture2D" uid="uid://t8l53j0bc7f2" path="res://Assets/portrait3.png" id="1_usqx7"]
+[ext_resource type="Texture2D" uid="uid://jb8nmrn1dcll" path="res://Assets/portrait2.png" id="2_pbc7g"]
 [ext_resource type="Script" path="res://Scripts/ACT1/CharacterSelectPortrait.cs" id="2_v1n6i"]
-[ext_resource type="Texture2D" uid="uid://cbmulgt7ybtu8" path="res://Assets/portrait1.png" id="3_3mr1x"]
+[ext_resource type="Texture2D" uid="uid://c8ldubn5w0ajc" path="res://Assets/portrait1.png" id="3_3mr1x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsa10"]
 size = Vector2(342, 440)
@@ -110,6 +110,7 @@ rotation = -0.541052
 color = Color(0.443137, 0.443137, 0.443137, 0.596078)
 
 [node name="Text" type="RichTextLabel" parent="Not Implemented1"]
+layout_mode = 0
 offset_left = 92.9494
 offset_top = 4.51779
 offset_right = 255.949
@@ -125,6 +126,7 @@ rotation = -0.541052
 color = Color(0.443137, 0.443137, 0.443137, 0.596078)
 
 [node name="Text" type="RichTextLabel" parent="Not Implemented2"]
+layout_mode = 0
 offset_left = 92.9494
 offset_top = 4.51779
 offset_right = 255.949

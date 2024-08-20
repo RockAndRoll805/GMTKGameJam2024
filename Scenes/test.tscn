@@ -1,52 +1,37 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4k4pxiqtjiak"]
+[gd_scene load_steps=7 format=3 uid="uid://dsn70y7eq70f4"]
 
-[ext_resource type="Script" path="res://Scripts/ACT1/PlayerShip.cs" id="1_3mc7q"]
-<<<<<<< HEAD
-[ext_resource type="Texture2D" uid="uid://c1lo31c2gtqoq" path="res://Assets/icon.svg" id="2_5h2tr"]
-=======
-[ext_resource type="Texture2D" uid="uid://sa05136wkh1b" path="res://Assets/icon.svg" id="2_5h2tr"]
->>>>>>> second-portrait
-[ext_resource type="Script" path="res://Scripts/CameraController.cs" id="3_jndf3"]
-[ext_resource type="PackedScene" uid="uid://b0bsjiyya6vgq" path="res://Assets/UI_NineSlice_01.res" id="4_801iv"]
+[ext_resource type="PackedScene" uid="uid://bgrmhy48e6sta" path="res://Prefabs/player_ship.tscn" id="2_kt0xr"]
+[ext_resource type="Script" path="res://Scripts/CameraController.cs" id="3_kq11w"]
+[ext_resource type="Texture2D" uid="uid://cchnmlln3rjl3" path="res://Assets/icon.svg" id="3_ojvqo"]
+[ext_resource type="Script" path="res://Scripts/Generic/Talkable.cs" id="3_tr2g7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bc1ms"]
-size = Vector2(126, 125)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crnpy"]
+size = Vector2(120, 128)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_w3xox"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_5h2tr")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmiab"]
+size = Vector2(168, 160)
 
-[node name="World" type="Node2D"]
+[node name="Act1" type="Node2D"]
 
-[node name="PlayerShip" type="CharacterBody2D" parent="."]
-script = ExtResource("1_3mc7q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerShip"]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_bc1ms")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerShip"]
-sprite_frames = SubResource("SpriteFrames_w3xox")
+[node name="PlayerShip" parent="." instance=ExtResource("2_kt0xr")]
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
-script = ExtResource("3_jndf3")
+script = ExtResource("3_kq11w")
 target = NodePath("../PlayerShip")
 
-[node name="UiNineSlice01" parent="." instance=ExtResource("4_801iv")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -227.0
-offset_top = 90.0
-offset_right = 1541.0
-offset_bottom = 542.0
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.25, 0.25)
+[node name="Talkbot" type="Area2D" parent="."]
+position = Vector2(404, 208)
+script = ExtResource("3_tr2g7")
+dialogue = PackedStringArray("Hello!", "My name is Talkbot!")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Talkbot"]
+
+[node name="CollisionBoundary" type="CollisionShape2D" parent="Talkbot/RigidBody2D"]
+shape = SubResource("RectangleShape2D_crnpy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Talkbot/RigidBody2D"]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("3_ojvqo")
+
+[node name="InteractBoundary" type="CollisionShape2D" parent="Talkbot"]
+shape = SubResource("RectangleShape2D_cmiab")
