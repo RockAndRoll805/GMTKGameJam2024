@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class PlayerShip : CharacterBody2D
+public partial class PlayerShip : Player
 {
 	[Export] private int movespeed = 250;
 
@@ -15,6 +15,7 @@ public partial class PlayerShip : CharacterBody2D
 	public override void _Ready()
 	{
 		// initialize sprite and collider
+		base._Ready();
 		sprite = (AnimatedSprite2D) GetNode("AnimatedSprite2D");
 		collider = (CollisionShape2D) GetNode("CollisionShape2D");	
 	}
@@ -22,6 +23,7 @@ public partial class PlayerShip : CharacterBody2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		base._Process(delta);
 		HandleMove();
 
 		MoveAndSlide();

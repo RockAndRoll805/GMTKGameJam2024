@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbwts6voj5qc6"]
+[gd_scene load_steps=4 format=3 uid="uid://dbwts6voj5qc6"]
 
-[ext_resource type="Texture2D" uid="uid://d0ebtoa4bv728" path="res://Assets/placeholder bg.png" id="1_esuww"]
+[ext_resource type="Texture2D" uid="uid://b16ylfhtuvr7j" path="res://Assets/placeholder bg.png" id="1_esuww"]
+[ext_resource type="PackedScene" uid="uid://bgrmhy48e6sta" path="res://Prefabs/player_ship.tscn" id="2_juoca"]
+[ext_resource type="Script" path="res://Scripts/CameraController.cs" id="3_5tgyx"]
 
 [node name="Act1" type="Node2D"]
 
@@ -8,3 +10,9 @@
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_esuww")
+
+[node name="PlayerShip" parent="." instance=ExtResource("2_juoca")]
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("3_5tgyx")
+target = NodePath("../PlayerShip")
